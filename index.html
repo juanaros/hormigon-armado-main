@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <title>Diseño a Flexion</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Vigas de Hormigon Armado</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link" href="#">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <h3 class="mt-5 mb-4 text-center">Diseño a flexión</h3>
+        <div class="container gap-5 justify-content-center align-items-center">
+            <p class="text-secondary text-center">Utilice un punto (".") para expresar números decimales <br> Siempre verifique los resultados entregados por esta calculadora</p>
+            <div class="row" id="flex">
+                <div class="col-lg-3 col-sm-12">
+                    <p class="fs-4 mt-3">Momento Solicitante:</p>
+                    <input id="momento" type="value" class="form-control" placeholder="Ingresa un valor en T*m">
+                </div>
+                <div class="col-lg-3 col-sm-12">
+                    <p class="fs-4 mt-3">Ancho "b":</p>
+                    <input id="anchoB" type="value" class="form-control" placeholder="Ingresa un valor en centimentros">
+                </div>
+                <div class="col-lg-3 col-sm-12">
+                    <p class="fs-4 mt-3">Altura útil "d":</p>
+                    <input id="alturaD" type="value" class="form-control" placeholder="Ingresa un valor en centimentros">
+                </div>
+                <div class="col-lg-3 col-sm-12">
+                    <p class="fs-4 mt-3">Calidad del hormigón</p>
+                    <select name="" id="calidad" class="form-select">
+                        <option selected>Selecciona una opcion</option>
+                        <option value="150">G15</option>
+                        <option value="200">G20</option>
+                        <option value="250">G25</option>
+                        <option value="300">G30</option>
+                        <option value="350">G35</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row my-4 text-center">
+                <div class="col-12">
+                    <input id="boton" class="btn btn-success px-4" type="button" value="Calcular">
+                </div>
+            </div>
+        </div>
+        <div class="bg-secondary my-5 p-4 text-light fs-4 mw-100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-sm-12 p-3 m-3">
+                        <p>Momento Último Límite</p>
+                        <div class="d-flex"><div class="bg-body-secondary text-dark w-100 p-2 text-center" id="result">&nbsp;</div>
+                        <p class="mx-3">(T*m)</p></div>
+                    </div>
+                    <div class="col-lg-3 col-sm-12 p-3 m-3">
+                    <p>¿Qué armadura necesita?</p>
+                    <div id="tipo-armadura" class="bg-body-secondary text-dark p-2">&nbsp;</div>
+                    </div>
+                    <div class="col-lg-3 col-sm-12 p-3 m-3" >
+                        <p>Momentos Calculados:</p>
+                        <div class="bg-body-secondary text-dark p-2"  style="height: 400px;">
+                            <ul id="lista-momentos" ></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="bg-dark text-light text-center fs-4 mt-5 py-5">Desarrollado por Juan Aros Morales en 2023</footer>
+    </main>
+    <script src="assets/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>
