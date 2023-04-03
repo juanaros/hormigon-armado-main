@@ -34,6 +34,7 @@ calculate.addEventListener('click', () => {
         };
         arrayMom.push(newMomentum);
         updateList();
+        console.log(arrayMom)
     }
     addMomentum();
 });
@@ -42,7 +43,7 @@ const updateList = () => {
     let html = ''
     for(let momento of arrayMom){
         html +=`
-                <li class="d-flex mb-3">${momento.valor.toFixed(2)}
+                <li class="d-flex mb-3">${momento.valor.toFixed(2)} T*m
                 <button onclick="borrar(${momento.id})" class="btn bg-danger text-light">Borrar</button>
                 </li>
                 
@@ -55,5 +56,6 @@ const borrar = (idTarea) => {
     const index = arrayMom.findIndex(task => task.id === idTarea);
     arrayMom.splice(index, 1);
     updateList();
+    console.log(arrayMom)
 }
 
